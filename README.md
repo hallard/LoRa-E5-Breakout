@@ -39,7 +39,7 @@ Boards
 
 ~~You can order PCBs of this board at [PCBs.io][3]~~
 
-- ~~[V1.0](https://www.PCBs.io/share/r1a3J)~~
+- ~~[V1.0](https://PCBs.io/share/zM5GG)~~
 
  ~~PCBs.io give me some reward when you order my designed boards from their site. This is pretty good, because I can use these rewards to create and design new boards and order boards for a discounted price, so if you don't care about PCB manufacturer please use PCBs.io.~~
 
@@ -47,7 +47,7 @@ Looks like PCBs.io is gone, I do not have any rewards from PCBs.io since August 
 
 So you can order the board on [oshpark](https://oshpark.com). 
 
-- [V1.0](https://oshpark.com/shared_projects/b8vroNzy) Classic I2C connector
+- [V1.0](https://oshpark.com/shared_projects/b8vroNzy) 
 
 It's a pitty after several discuss with OSHPark that I can't have any rewards for each people ordering my boards, this would allow me to order free PCB for shared projects and create new ones. For information my shared boards generated a total of **$285 162.00** orders at PCBs.io in 4 years, not bad at all :-)
 
