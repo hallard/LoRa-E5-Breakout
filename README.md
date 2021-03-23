@@ -1,6 +1,8 @@
 LoRa-E5 breakout board
 ======================
 
+<img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout.png">
+
 Mainly based on [LoRa-E5 mini](https://www.seeedstudio.com/LoRa-E5-mini-STM32WLE5JC-p-4869.html) board from Seedstudio, but since it was out of stock and I needed some specific wiring, I designed my own based on the Open Source design they made (thank for sharing)
 
 I'm using mainly to flash custom firmware in it, and not using AT default firmware.
@@ -14,6 +16,7 @@ I'm using mainly to flash custom firmware in it, and not using AT default firmwa
 - Red Led on PB5
 - Optional 2 Tactile Switch (boot and reset)
 - 2 Antenna connector (u-Fl and SMA), select with 0 Ohm resistor
+- I2C 4 pins location for "classic" sensors
 
 Detailed Description
 ====================
@@ -31,8 +34,8 @@ Boards
 
 **Top & bottom side V1.0**
 
-<img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout-top.jpg">
-<img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout-bot.jpg">
+<img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout-top.png">
+<img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout-bot.png">
 
 ~~You can order PCBs of this board at [PCBs.io][3]~~
 
