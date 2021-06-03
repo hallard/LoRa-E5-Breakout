@@ -1,7 +1,7 @@
 LoRa-E5 breakout board
 ======================
 
-<img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout.png">
+<img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout-top.png">
 
 Mainly based on [LoRa-E5 mini](https://www.seeedstudio.com/LoRa-E5-mini-STM32WLE5JC-p-4869.html) board from Seedstudio, but since it was out of stock and I needed some specific wiring, I designed my own based on the Open Source design they made (thank for sharing)
 
@@ -32,11 +32,6 @@ Schematic
 Boards 
 ======
 
-**Top & bottom side V1.0**
-
-<img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout-top.png">
-<img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout-bot.png">
-
 ~~You can order PCBs of this board at [PCBs.io][3]~~
 
 - ~~[V1.0](https://PCBs.io/share/zM5GG)~~
@@ -56,7 +51,10 @@ Hoping one day OSHparks will thanks me giving them this market.
 Assembled boards
 ================
 
-TBD
+**Top & bottom side V1.0**
+
+<img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout-top.png">
+<img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout-bot.png">
 
 Bill Of Material
 ================
