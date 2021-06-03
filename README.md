@@ -7,7 +7,7 @@ Mainly based on [LoRa-E5 mini](https://www.seeedstudio.com/LoRa-E5-mini-STM32WLE
 
 I'm using mainly to flash custom firmware in it, and not using AT default firmware.
 
-**I'm waiting for PCB, boards untested, use at your own risk**
+**These boards have been received, assembled, and works as expected**
 
 - LoRa-E5 Module
 - No USB/Serial, SMD FTDI 6 pins connector (**use 3.3V FTDI One, not 5V**)
