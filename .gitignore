@@ -1,5 +1,7 @@
 # Ignore list for Eagle, a PCB layout tool
 .DS_Store
+Gerbers/
+Gerbers.zip
 
 # Backup files
 *.s#?
