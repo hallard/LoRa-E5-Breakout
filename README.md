@@ -62,6 +62,8 @@ Bill Of Material
 Nothing fancy, all components are 0805 and/or PTH and can be ordered almost anywhere (digikey, mouser, radiospare, ...). 
 use only what you need dependings on what you want to do. 
 
+Check Seeed format [BOM](https://github.com/hallard/LoRa-E5-Breakout/LoRa-E5-Breakout-BOM.xlsx) File, check on [Seeed OPL](https://www.seeedstudio.com/opl.html) for manufacturer SKU match.
+
 License
 =======
 
