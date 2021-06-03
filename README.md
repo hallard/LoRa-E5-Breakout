@@ -67,9 +67,8 @@ Check Seeed format [BOM](https://github.com/hallard/LoRa-E5-Breakout/blob/main/L
 License
 =======
 
-<img alt="Creative Commons Attribution-NonCommercial 4.0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">   
+Same as original here https://wiki.seeedstudio.com/LoRa_E5_mini/ if any
 
-Licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/)    
 
 
  
