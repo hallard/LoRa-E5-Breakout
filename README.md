@@ -142,6 +142,7 @@ Mbed LoRaWANStack initialized
  23 bytes scheduled for transmission 
 ```
 
+Green LED will be on when on receive mode and Red when sending data.
 
 ## License
 
