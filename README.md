@@ -1,5 +1,4 @@
-LoRa-E5 breakout board
-======================
+# LoRa-E5 breakout board
 
 <img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout-top.png">
 
@@ -18,19 +17,17 @@ I'm using mainly to flash custom firmware in it, and not using AT default firmwa
 - 2 Antenna connector (u-Fl and SMA), select with 0 Ohm resistor
 - I2C 4 pins location for "classic" sensors
 
-Detailed Description
-====================
+## Detailed Description
 
-No specific documentation for now, it's just a kind of wiring helper as schematic
+No specific documentation for now, it's just a kind of wiring helper as schematic.
 
+I also assume that you are familiar with all LoRaWAN stuff, all setup/infrastructure/network server/provisionning and other are out of scope of this repository.
 
-Schematic
-=========
+## Schematics
 
 <img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout-sch.png">
 
-Boards 
-======
+## Boards 
 
 ~~You can order PCBs of this board at [PCBs.io][3]~~
 
@@ -48,24 +45,83 @@ It's a pitty after several discuss with OSHPark that I can't have any rewards fo
 
 Hoping one day OSHparks will thanks me giving them this market. 
 
-Assembled boards
-================
+### Assembled boards
 
 **Top & bottom side V1.0**
 
 <img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout-top.png">
 <img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/LoRa-E5-Breakout-bot.png">
 
-Bill Of Material
-================
+### Bill Of Material
 
 Nothing fancy, all components are 0805 and/or PTH and can be ordered almost anywhere (digikey, mouser, radiospare, ...). 
 use only what you need dependings on what you want to do. 
 
 Check Seeed format [BOM](https://github.com/hallard/LoRa-E5-Breakout/blob/main/LoRa-E5-Breakout-BOM.xlsx) File, check on [Seeed OPL](https://www.seeedstudio.com/opl.html) for manufacturer SKU match.
 
-License
-=======
+## Firmware
+
+Before flashing any custom firmware, I strongly advise to test the board with default AT-Firmware to get the keys (even if you can use your own of course). 
+
+Do do this, use 3.3V (and NOT 5V) FTDI USB/Serial adapter, I love this one from [sparkun](https://www.sparkfun.com/products/14050)
+![](https://cdn.sparkfun.com//assets/parts/1/1/8/8/8/14050-01.jpg)
+
+- Connect FTDI on the 6 pins dedicated header of the breakout
+- use them a terminal application and open the port on your computer corresponding to the FTDI device
+- set terminal settings to 9600 bauds 8 bits no parity 1 stop bit (8N1)
+- check with at command `AT` device should anwser ``+AT: OK``
+
+then get keys of the device
+
+```
+AT 
++AT: OK
+AT+ID 
++ID: DevAddr, 24:90:05:44
++ID: DevEui, 2C:F7:F1:20:24:90:05:44
++ID: AppEui, 80:00:00:00:00:00:00:06
+```
+
+### Provision device on Network Server
+
+For testing I'm always using The Things Network (TTN).
+So next step is to provision this new device to TTN with the above keys (no need DevAddr) and get APPKEY from TTN (random generate) then get the key issued from TTN (we'll use it later below)
+
+### Compile and flash Firmware
+
+You can flash the board with excellent [mbed-os](https://os.mbed.com/mbed-os/) framework. 
+Easy way is to use [mbed studio IDE](https://os.mbed.com/studio/). 
+We added this board into [stm32customtargets](https://github.com/ARMmbed/stm32customtargets), don't hesitate to read the [readme](https://github.com/ARMmbed/stm32customtargets/blob/master/README.md). 
+Finally the main firmware [mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan) program.
+
+Once IDE installed: 
+
+- use `file` / `import program` and them import the example with URL `https://github.com/ARMmbed/mbed-os-example-lorawan`
+- right click in the project name and select `Add Library` and enter `https://github.com/ARMmbed/stm32customtargets`
+- open the file `custom_targets.json` from folder `stm32customtargets` and copy whole contents
+- paste copied contents in the main root folder file `custom_targets.json` (yes replace the whole file) 
+- open the file `mbed_app.json` and change parameters on the section `target_overrides`
+    - LoRaWAN parameters such as frequency plan, OTAA, Duty Cycle, ...
+    - replace keys with the ones you got from above step `lora.device-eui`, `lora.application-eui` and `lora.application-key`
+- add the following section near the end of the file `mbed_app.json`.
+
+```json
+        "LORA_E5_BREAKOUT": {
+            "stm32wl-lora-driver.debug_tx": "PB_5",
+            "stm32wl-lora-driver.debug_rx": "PB_10",
+            "stm32wl-lora-driver.debug_invert": 1
+        }
+```
+
+Then on IDE select target "LORA_E5_BREAKOUT", bulld and flash with your favorite programmer (I'm using STLink) with GND/SWDIO/SWDCLK/RESET connected. Take care that 1st time you need to make sure the Read Out Protection of the device is AA, if it is shown as BB, select AA and click Apply. See the end of this [section](https://wiki.seeedstudio.com/LoRa_E5_Dev_Board/#24-modify-your-device-eui-application-eui-application-key-and-your-lorawan-region) on how to do that with STM32CubeProgrammer
+
+### Build and Flash
+
+From IDE you can build the example. If you plug your STLink while project opened, mbed ide will ask you if you want to set it up for this project/target, once approved you can compile, flash and even debug from mbed ide (need some tools installed, [read](https://os.mbed.com/docs/mbed-studio/current/monitor-debug/debugging-with-mbed-studio.html), very nice.
+
+
+
+## License
 
 Same as original here https://wiki.seeedstudio.com/LoRa_E5_mini/ if any
 
