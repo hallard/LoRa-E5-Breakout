@@ -113,12 +113,34 @@ Once IDE installed:
         }
 ```
 
-Then on IDE select target "LORA_E5_BREAKOUT", bulld and flash with your favorite programmer (I'm using STLink) with GND/SWDIO/SWDCLK/RESET connected. Take care that 1st time you need to make sure the Read Out Protection of the device is AA, if it is shown as BB, select AA and click Apply. See the end of this [section](https://wiki.seeedstudio.com/LoRa_E5_Dev_Board/#24-modify-your-device-eui-application-eui-application-key-and-your-lorawan-region) on how to do that with STM32CubeProgrammer
+Then on IDE select target "LORA_E5_BREAKOUT", build and flash with your favorite programmer (I'm using STLink) with GND/SWDIO/SWDCLK/RESET connected. 
+
+Pay attention, that 1st time you need to erase SeeeStudio original firmware, make sure the Read Out Protection of the device is AA. If it is shown as BB, select AA and click Apply. See the end of this [section](https://wiki.seeedstudio.com/LoRa_E5_Dev_Board/#24-modify-your-device-eui-application-eui-application-key-and-your-lorawan-region) on how to do that with STM32CubeProgrammer.
 
 ### Build and Flash
 
 From IDE you can build the example. If you plug your STLink while project opened, mbed ide will ask you if you want to set it up for this project/target, once approved you can compile, flash and even debug from mbed ide (need some tools installed, [read](https://os.mbed.com/docs/mbed-studio/current/monitor-debug/debugging-with-mbed-studio.html), very nice.
 
+
+<img src="https://github.com/hallard/LoRa-E5-Breakout/blob/main/pictures/mbed-ide.png">
+
+You can also see logs with the FTDI adapter and any Serial terminal set to 115200 bauds 8 bits no parity 1 stop bit (8N1)
+
+```
+Mbed LoRaWANStack initialized 
+ CONFIRMED message retries : 3 
+ Adaptive data  rate (ADR) - Enabled 
+ Connection - In Progress ...
+ Connection - Successful 
+ Dummy Sensor Value = 3 
+ 23 bytes scheduled for transmission 
+ Message Sent to Network Server 
+ Dummy Sensor Value = 5 
+ 23 bytes scheduled for transmission 
+ Message Sent to Network Server 
+ Dummy Sensor Value = 7 
+ 23 bytes scheduled for transmission 
+```
 
 
 ## License
