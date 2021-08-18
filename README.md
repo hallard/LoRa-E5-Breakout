@@ -109,7 +109,8 @@ Once IDE installed:
         "LORA_E5_BREAKOUT": {
             "stm32wl-lora-driver.debug_tx": "PB_5",
             "stm32wl-lora-driver.debug_rx": "PB_10",
-            "stm32wl-lora-driver.debug_invert": 1
+            "stm32wl-lora-driver.debug_invert": 1,
+            "stm32wl-lora-driver.rf_switch_config": 2,
         }
 ```
 
