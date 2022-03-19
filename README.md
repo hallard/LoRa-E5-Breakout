@@ -107,12 +107,15 @@ Once IDE installed:
 
 ```json
         "LORA_E5_BREAKOUT": {
+            "stm32wl-lora-driver.rf_switch_config": "RBI_CONF_RFO_HP",
             "stm32wl-lora-driver.debug_tx": "PB_5",
             "stm32wl-lora-driver.debug_rx": "PB_10",
             "stm32wl-lora-driver.debug_invert": 1,
             "stm32wl-lora-driver.rf_switch_config": 2,
         }
 ```
+
+When using any LoRa-E5 board you need to set the line `rf_switch_config` as above to `RBI_CONF_RFO_HP`, because hardware has not wired the mode `RBI_CONF_RFO_HP` and the stack for EU868 will try to use the LP path, and thus will result in unreliable signal strenght (see #3). See this [post](https://forum.seeedstudio.com/t/lora-e5-fw-bug-tx-eu868-85ma-too-high-consumption/260126) and this [one](https://forum.rakwireless.com/t/rak3172-too-much-consumption-in-transmit-eu868/4781) for details.
 
 Then on IDE select target "LORA_E5_BREAKOUT", build and flash with your favorite programmer (I'm using STLink) with GND/SWDIO/SWDCLK/RESET connected. 
 
