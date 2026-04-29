@@ -150,7 +150,12 @@ Green LED will be on when on receive mode and Red when sending data.
 
 ## License
 
-Same as original here https://wiki.seeedstudio.com/LoRa_E5_mini/ if any
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+If you want to do commercial stuff with this project, please contact [CH2i company](https://ch2i.eu/en#support) so we can organize an simple agreement.
+
+Original Seeed Studio reference design at https://wiki.seeedstudio.com/LoRa_E5_mini/
 
 
 
